@@ -1,0 +1,13 @@
+# vs-code settings are synced with the vs-code settings sync
+- name: Install vscode
+  apt:
+    pkg:
+      - code
+    state: latest
+    update_cache: true
+- name: Make font folder
+  file:
+    state: directory
+    path: "{{ user_home_directory }}/.local/share/fonts"
+- name: Download font
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"

@@ -22,5 +22,8 @@ alias vpn='nm-connection-editor'
 . "$HOME/.cargo/env"
 {%- endif %}
 
+# Enable fzf search
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
 # Use starship prompt
 eval "$(starship init bash)"

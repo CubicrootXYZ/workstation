@@ -1,7 +1,8 @@
 - name: Install dependencies
   apt:
     pkg:
-      - kitty
+      - kitty # Terminal emulator
+      - fzf # Fuzzy finder
     state: latest
     update_cache: true
 - name: Make font folder

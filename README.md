@@ -18,6 +18,6 @@ To update a workstation to the latest state run
 bash run.sh
 ```
 
-### Attribution
+## Attribution
 
 - Kitty theme from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)
