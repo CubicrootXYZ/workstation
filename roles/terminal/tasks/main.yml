@@ -1,0 +1,7 @@
+- name: Install Starship
+  apt:
+    pkg:
+      - starship
+      - fonts-jetbrains-mono
+    state: latest
+    update_cache: true

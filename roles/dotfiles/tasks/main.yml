@@ -1,0 +1,28 @@
+    - find:
+        path: ./roles/dotfiles/templates
+        file_type: directory
+        recurse: true
+        hidden: true 
+      register: result
+    - debug:
+        msg: "{{ item | regex_replace('^roles/dotfiles/templates/', '') }}"
+      loop: "{{ result.files|map(attribute='path')|list }}"
+    - file:
+        state: directory
+        path: "/tmp/{{ _path }}"
+      loop: "{{ result.files|map(attribute='path')|list }}"
+      vars:
+        _path: "{{ item | regex_replace('^roles/dotfiles/templates/', '') }}"
+    - find:
+        path: ./roles/dotfiles/templates
+        recurse: true
+        hidden: true
+      register: result
+    - template:
+        src: "{{ _src }}"
+        dest: "/tmp/{{ _dest }}"
+      loop: "{{ result.files|map(attribute='path')|list }}"
+      vars:
+        _src: "{{ item | regex_replace('^roles/dotfiles/templates/', '') }}"
+        _dest: "{{ item | regex_replace('^roles/dotfiles/templates/', '') }}"
+        # TODO make work
