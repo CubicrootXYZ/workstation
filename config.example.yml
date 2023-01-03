@@ -1,0 +1,20 @@
+# Some general purpose variables
+user_home_directory: /home/myuser
+
+# Golang related setup
+go:
+  enabled: false
+  bin_path: /home/myuser/go/bin
+
+# Yubikey setup
+yubikey:
+  enabled: false
+
+# Wireguard setup
+wireguard:
+  enabled: false
+  alias_vpn_name: "My VPN" # vpn-up and vpn-down aliases will be created for this vpn
+
+# Rust setup
+rust:
+  enabled: false

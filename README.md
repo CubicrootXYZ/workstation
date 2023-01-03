@@ -17,3 +17,7 @@ To update a workstation to the latest state run
 ```bash
 bash run.sh
 ```
+
+### Attribution
+
+- Kitty theme from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)

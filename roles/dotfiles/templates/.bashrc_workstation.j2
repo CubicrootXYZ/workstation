@@ -1,0 +1,26 @@
+{% if yubikey.enabled -%}
+# Yubikey setup
+export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh # enable yubikey as SSH agent
+alias yubifix='gpg-connect-agent updatestartuptty /bye'
+{%- endif %}
+
+{% if go.enabled -%}
+# Golang setup
+export GOROOT=/usr/local/go 
+export PATH=$GOROOT/bin:{{ go.bin_path }}:$PATH 
+{%- endif %}
+
+{% if wireguard.enabled -%}
+# Wireguard VPN aliases
+alias vpn-up='nmcli connection up "{{ wireguard.alias_vpn_name }}"'
+alias vpn-down='nmcli connection down "{{ wireguard.alias_vpn_name }}"'
+alias vpn='nm-connection-editor'
+{%- endif %}
+
+{% if rust.enabled -%}
+# Rust setup
+. "$HOME/.cargo/env"
+{%- endif %}
+
+# Use starship prompt
+eval "$(starship init bash)"

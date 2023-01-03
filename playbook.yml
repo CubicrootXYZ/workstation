@@ -3,3 +3,8 @@
   become: true
   roles:
     - {name: dotfiles , tags: [dotfiles]}
+- hosts: localhost
+  gather_facts: no
+  become: true
+  roles:
+    - {name: terminal , tags: [terminal, bash, starship]}
