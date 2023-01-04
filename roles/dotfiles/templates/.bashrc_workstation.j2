@@ -1,29 +1,49 @@
-{% if yubikey.enabled -%}
+{% if yubikey is defined and yubikey.enabled -%}
 # Yubikey setup
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh # enable yubikey as SSH agent
 alias yubifix='gpg-connect-agent updatestartuptty /bye'
 {%- endif %}
 
-{% if go.enabled -%}
+{% if go is defined and go.enabled -%}
 # Golang setup
 export GOROOT=/usr/local/go 
-export PATH=$GOROOT/bin:{{ go.bin_path }}:$PATH 
+export GOPATH=$HOME/git
+export PATH=$GOROOT/bin:/usr/local/go/bin:$PATH 
+{% if go.env.gonoproxy -%}
+export GONOPROXY='{{go.env.gonoproxy}}'
+{% endif %}
+{% if go.env.gonosumdb -%}
+export GONOPROXY='{{go.env.gonosumdb}}'
+{% endif %}
+{% if go.env.goproxy -%}
+export GONOPROXY='{{go.env.goproxy}}'
+{% endif %}
 {%- endif %}
 
-{% if wireguard.enabled -%}
+{% if wireguard is defined and wireguard.enabled -%}
 # Wireguard VPN aliases
 alias vpn-up='nmcli connection up "{{ wireguard.alias_vpn_name }}"'
 alias vpn-down='nmcli connection down "{{ wireguard.alias_vpn_name }}"'
 alias vpn='nm-connection-editor'
 {%- endif %}
 
-{% if rust.enabled -%}
+{% if rust is defined and rust.enabled -%}
 # Rust setup
 . "$HOME/.cargo/env"
 {%- endif %}
+
+{% if git is defined and git.enabled %} 
+alias git-main='git checkout main && git pull'
+alias git-su='git submodule -q foreach git pull -q origin main'
+alias git-amend='git add . && git commit --amend --no-edit'
+alias gsu='git submodule update --init --rebase --recursive'
+{% endif %}
+
+export EDITOR='nano'
 
 # Enable fzf search
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # Use starship prompt
 eval "$(starship init bash)"
+

@@ -1,3 +1,9 @@
+- name: Install dependencies
+  apt:
+    pkg:
+      - nano
+    state: latest
+    update_cache: true
 - name: Update .bashrc to include .bashrc_workstation
   lineinfile:
     dest: "{{ user_home_directory }}/.bashrc"

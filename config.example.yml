@@ -1,10 +1,16 @@
 # Some general purpose variables
 user_home_directory: /home/myuser
+user: myuser
 
 # Golang related setup
 go:
   enabled: false
   bin_path: /home/myuser/go/bin
+  version: 1.19.2
+  env: # Define environment variables used by go
+    gonoproxy: null
+    gonosumdb: null
+    goproxy: null
 
 # Yubikey setup
 yubikey:
@@ -18,3 +24,9 @@ wireguard:
 # Rust setup
 rust:
   enabled: false
+
+# Git setup
+git:
+  enabled: false
+  email: name@example.com
+  name: username

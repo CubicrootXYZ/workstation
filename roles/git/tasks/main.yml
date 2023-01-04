@@ -1,0 +1,11 @@
+- name: Install dependencies
+  apt:
+    pkg:
+      - git
+    state: latest
+    update_cache: true
+- name: Template git configuration
+  template:
+    src: ".gitconfig.j2"
+    dest: "{{ user_home_directory }}/.gitconfig"
+  

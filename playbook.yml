@@ -8,3 +8,13 @@
   become: true
   roles:
     - {name: terminal , tags: [terminal, bash, starship]}
+- hosts: localhost
+  gather_facts: no
+  become: true
+  roles:
+    - {name: git , tags: [git], when: "git is defined and git.enabled | bool"}
+- hosts: localhost
+  gather_facts: no
+  become: true
+  roles:
+    - {name: go , tags: [go], when: "go is defined and go.enabled | bool"}

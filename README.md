@@ -18,6 +18,19 @@ To update a workstation to the latest state run
 bash run.sh
 ```
 
+### Extended usage
+
+Debug mode:
+
+```bash
+bash run.sh -vvv
+```
+
+Only run limited set of roles:
+
+```bash
+bash run.sh -t git
+```
 ## Attribution
 
 - Kitty theme from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)
