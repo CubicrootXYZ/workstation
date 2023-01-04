@@ -1,0 +1,33 @@
+- name: Install dependencies
+  apt:
+    pkg:
+      - yubikey-manager
+      - gnupg 
+      - pcscd
+      - scdaemon
+    state: latest
+    update_cache: true
+- name: Make config folders
+  file:
+    state: directory
+    path: "{{ user_home_directory }}/{{ item }}"
+  with_items:
+    - .gnupg
+    - .config/autostart
+    - .config/environment.d
+- name: Template scdaemon config
+  template:
+    src: "scdaemon.conf.j2"
+    dest: "{{ user_home_directory }}/.gnupg/scdaemon.conf"
+- name: Template gpg config
+  template:
+    src: "gpg.conf.j2"
+    dest: "{{ user_home_directory }}/.gnupg/gpg.conf"
+- name: Template gnome keyring ssh desktop file
+  template:
+    src: "gnome-keyring-ssh.desktop.j2"
+    dest: "{{ user_home_directory }}/.config/autostart/gnome-keyring-ssh.desktop"
+- name: Template gpg agent config
+  template:
+    src: "99-gpg-agent_ssh.conf.j2"
+    dest: "{{ user_home_directory }}/.config/environment.d/99-gpg-agent_ssh.conf"

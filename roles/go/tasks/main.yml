@@ -8,7 +8,7 @@
   debug: msg="go_version={{ go_version.stdout }}"
 - name: Stop if already installed
   meta: end_play
-  when: go_version.stdout != "" and go_version.stdout is version_compare(go.version, '>', strict=True)
+  when: go_version is defined and go_version.stdout != "" and go_version.stdout is version_compare(go.version, '>=', strict=True)
 
 # Install
 - name: New version

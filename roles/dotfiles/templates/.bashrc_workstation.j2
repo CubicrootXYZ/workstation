@@ -1,7 +1,8 @@
 {% if yubikey is defined and yubikey.enabled -%}
 # Yubikey setup
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh # enable yubikey as SSH agent
-alias yubifix='gpg-connect-agent updatestartuptty /bye'
+alias yubi-fix='gpg-connect-agent updatestartuptty /bye'
+alias yubi-restart='sudo systemctl restart pcscd.service && systemctl --user restart gpg-agent.service'
 {%- endif %}
 
 {% if go is defined and go.enabled -%}
