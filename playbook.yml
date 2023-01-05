@@ -7,3 +7,153 @@
     - {name: git , tags: [git], when: "git is defined and git.enabled | bool"}
     - {name: go , tags: [go], when: "go is defined and go.enabled | bool"}
     - {name: yubikey , tags: [yubikey], when: "yubikey is defined and yubikey.enabled | bool"}
+- hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: petermosmans.customize-gnome, tags: [gsettings]}
+  vars:
+    gnome_user: "{{ user }}"
+    gnome_extensions:
+       - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v52.shell-extension.zip
+         id: 1160
+         enable: yes # Dash to panel
+      - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v36.shell-extension.zip
+        id: 3733 
+        enable: yes # Tiling Assistant
+    gnome_gsettings:
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-trash
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: multi-monitor
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: preferred-monitor-by-connector
+        value: 'primary'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: intellihide
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: animation-time
+        value: '0.2'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: animate-show-apps
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: apply-glossy-effect
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: autohide
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: background-color
+        value: '#ffffff'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: background-opacity
+        value: '0.8'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: click-action
+        value: 'focus-minimize-or-previews'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: custom-theme-running-dots-border-color
+        value: '#ffffff'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: custom-theme-shrink
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: dash-max-icon-size
+        value: '20'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: disable-overview-on-startup
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: dock-fixed
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: dock-position
+        value: 'BOTTOM'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: extend-height
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: height-fraction
+        value: '0.9'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: hide-delay
+        value: '0.2'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: icon-size-fixed
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: isolate-locations
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: isolate-monitors
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: isolate-workspaces
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: max-alpha
+        value: '0.8'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: middle-click-action
+        value: 'launch'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: min-alpha
+        value: '0.2'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: minimize-shift
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: running-indicator-style
+        value: 'DOTS'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: scroll-action
+        value: 'switch-workspace'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: scroll-switch-workspace
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: scroll-to-focused-application
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: shift-click-action
+        value: 'launch'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: shift-middle-click-action
+        value: 'minimize'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-delay
+        value: '0.25'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-favorites
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-mounts
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-mounts-network
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-mounts-only-mounted
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-running
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-show-apps-button
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: show-windows-preview
+        value: 'true'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: transparency-mode
+        value: 'DEFAULT'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: unity-backlit-items
+        value: 'false'
+      - schema: org.gnome.shell.extensions.dash-to-dock
+        key: workspace-agnostic-urgent-windows
+        value: 'true'
