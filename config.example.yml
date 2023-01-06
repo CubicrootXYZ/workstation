@@ -30,3 +30,8 @@ git:
   enabled: false
   email: name@example.com
   name: username
+
+# Gnome settings
+gnome:
+  enabled: false
+  wallpaper: https://example.com/mypic.jpg
