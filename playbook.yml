@@ -11,7 +11,8 @@
   become: yes
   become_method: sudo
   roles:
-    - {role: petermosmans.customize-gnome, tags: [gsettings]}
+    - {role: gnome, tags: [gnome], when: "gnome is defined and gnome.enabled | bool"}
+    - {role: petermosmans.customize-gnome, tags: [gnome], when: "gnome is defined and gnome.enabled | bool"}
   vars:
     gnome_user: "{{ user }}"
     gnome_extensions:
@@ -26,6 +27,7 @@
         id: 1007
         enable: yes # Window ready notification remover 
     gnome_gsettings:
+      # Dash to Dock Settings 
       - schema: org.gnome.shell.extensions.dash-to-dock
         key: show-trash
         value: 'false'
@@ -162,6 +164,7 @@
         key: workspace-agnostic-urgent-windows
         value: 'true'
     gnome_dconf:
+      # Tiling Assistant Settings
       - key: /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup
         value: "false"
       - key: /org/gnome/shell/extensions/tiling-assistant/restore-window
@@ -184,3 +187,32 @@
         value: "['<Super>udiaeresis']"
       - key: /org/gnome/shell/extensions/tiling-assistant/tile-topright-quarter
         value: "['<Super>plus']"
+      # Gnome settings
+      - key: /org/gnome/desktop/background/picture-uri
+        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+      - key: /org/gnome/desktop/background/picture-uri-dark
+        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+      - key: /org/gnome/desktop/background/primary-color
+        value: "'#000000'"
+      - key: /org/gnome/desktop/background/secondary-color
+        value: "'#000000'"
+      - key: /org/gnome/desktop/interface/clock-show-seconds
+        value: "false"
+      - key: /org/gnome/desktop/interface/clock-show-weekday
+        value: "true"
+      - key: /org/gnome/desktop/interface/color-scheme
+        value: "'prefer-dark'"
+      - key: /org/gnome/desktop/interface/enable-hot-corners
+        value: "false"
+      - key: /org/gnome/desktop/interface/gtk-theme
+        value: "'Yaru-dark'"
+      - key: /org/gnome/desktop/interface/icon-theme
+        value: "'Yaru'"
+      - key: /org/gnome/desktop/interface/show-battery-percentage
+        value: "true"
+      - key: /org/gnome/desktop/screensaver/picture-uri
+        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+      - key: /org/gnome/desktop/calendar/show-weekdate
+        value: "true"
+      - key: /org/gnome/shell/extensions/ding/show-home
+        value: "false"
