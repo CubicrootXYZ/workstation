@@ -3,3 +3,7 @@
     url: "{{ gnome.wallpaper }}"   
     dest: "{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}"
     mode: 0775
+- name: Template GTK css
+  template:
+    src: "gtk.css.j2"
+    dest: "{{ user_home_directory }}/.config/gtk-3.0/gtk.css"
