@@ -311,3 +311,5 @@
         value: "150"
       - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-title-position
         value: "'BOTTOM'"
+      - key: /org/gnome/shell/extensions/dash-to-panel/panel-sizes
+        value: "'{\"0\":27,\"1\":27,\"2\":27}'"
