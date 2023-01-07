@@ -62,3 +62,4 @@ You need to reload gnome. Either log out and in once or press `ALT` + `F2` and e
 ## Attribution
 
 - Kitty theme from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)
+- Ansible gnome role from [PeterMosmans](https://github.com/PeterMosmans/ansible-role-customize-gnome)
