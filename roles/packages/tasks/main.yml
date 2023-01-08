@@ -1,0 +1,10 @@
+- name: Install apt packages
+  apt:
+    pkg: "{{ packages.apt }}"
+    state: latest
+    update_cache: true
+- name: Install snap packages
+  apt:
+    pkg: "{{ packages.snap }}"
+    state: latest
+    update_cache: true

@@ -3,6 +3,7 @@
   become: true
   roles:
     - {name: dotfiles , tags: [dotfiles]}
+    - {name: packages , tags: [packages], when: "packages is defined and packages.enabled | bool"}
     - {name: terminal , tags: [terminal, bash, starship]}
     - {name: git , tags: [git], when: "git is defined and git.enabled | bool"}
     - {name: go , tags: [go], when: "go is defined and go.enabled | bool"}
@@ -313,3 +314,10 @@
         value: "'BOTTOM'"
       - key: /org/gnome/shell/extensions/dash-to-panel/panel-sizes
         value: "'{\"0\":27,\"1\":27,\"2\":27}'"
+      # Shortcuts
+      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding
+        value: "'Print'"
+      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command
+        value: "'flameshot gui'"
+      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name
+        value: "'Flameshot'"

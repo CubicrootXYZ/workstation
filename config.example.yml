@@ -35,3 +35,11 @@ git:
 gnome:
   enabled: false
   wallpaper: https://example.com/mypic.jpg
+
+# Packages to install
+packages:
+  enabled: false
+  apt:
+    - keepassxc
+  snap:
+    - firefox
