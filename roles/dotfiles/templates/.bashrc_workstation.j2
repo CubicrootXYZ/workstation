@@ -8,8 +8,8 @@ alias yubi-restart='sudo systemctl restart pcscd.service && systemctl --user res
 {% if go is defined and go.enabled -%}
 # Golang setup
 export GOROOT=/usr/local/go 
-export GOPATH=$HOME/git
-export PATH=$GOROOT/bin:/usr/local/go/bin:$PATH 
+export GOPATH=$HOME/go
+export PATH=$GOROOT/bin:/usr/local/go/bin:$HOME/go/bin:$PATH 
 {% if go.env.gonoproxy -%}
 export GONOPROXY='{{go.env.gonoproxy}}'
 {% endif %}
