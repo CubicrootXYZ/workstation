@@ -14,10 +14,10 @@ export PATH=$GOROOT/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
 export GONOPROXY='{{go.env.gonoproxy}}'
 {% endif %}
 {% if go.env.gonosumdb -%}
-export GONOPROXY='{{go.env.gonosumdb}}'
+export GONOSUMDB='{{go.env.gonosumdb}}'
 {% endif %}
 {% if go.env.goproxy -%}
-export GONOPROXY='{{go.env.goproxy}}'
+export GOPROXY='{{go.env.goproxy}}'
 {% endif %}
 {%- endif %}
 
