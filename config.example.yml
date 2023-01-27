@@ -43,3 +43,9 @@ packages:
     - keepassxc
   snap:
     - firefox
+
+# OpenSnitch network firewall
+opensnitch:
+  enabled: false
+  version: 1.6.0-rc.4
+  

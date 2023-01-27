@@ -1,0 +1,39 @@
+- name: Make folder for programs
+  file:
+    state: directory
+    path: "{{ user_home_directory }}/deb"
+- name: Make folder for opensnitch config
+  file:
+    state: directory
+    path: "{{ user_home_directory }}/.config/opensnitch"
+- name: Template config
+  template:
+    src: "settings.conf.j2"
+    dest: "{{ user_home_directory }}/.config/opensnitch/settings.conf"
+- name: Download OpenSnitch
+  get_url:
+    url: "https://github.com/evilsocket/opensnitch/releases/download/v{{ opensnitch.version }}/opensnitch_{{ opensnitch.version }}-1_amd64.deb"   
+    dest: "{{ user_home_directory }}/deb/opensnitch_{{ opensnitch.version }}-1_amd64.deb"
+    mode: 0774
+- name: Download OpenSnitch UI
+  get_url:
+    url: "https://github.com/evilsocket/opensnitch/releases/download/v{{ opensnitch.version }}/python3-opensnitch-ui_{{ opensnitch.version }}-1_all.deb"   
+    dest: "{{ user_home_directory }}/deb/python3-opensnitch-ui_{{ opensnitch.version }}-1_all.deb"
+    mode: 0774
+- name: Install OpenSnitch
+  apt:
+    deb: "{{ user_home_directory }}/deb/opensnitch_{{ opensnitch.version }}-1_amd64.deb"
+- name: Install OpenSnitch UI
+  apt:
+    deb: "{{ user_home_directory }}/deb/python3-opensnitch-ui_{{ opensnitch.version }}-1_all.deb"
+- name: Install pip dependency
+  pip:
+    name: grpcio
+    version: 1.44.0
+- name: Install pip dependency
+  pip:
+    name: qt-material
+- name: Template autostart
+  template:
+    src: "opensnitch-gui.desktop.j2"
+    dest: "{{ user_home_directory }}/.config/autostart/opensnitch-gui.desktop"

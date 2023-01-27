@@ -8,6 +8,7 @@
     - {name: git , tags: [git], when: "git is defined and git.enabled | bool"}
     - {name: go , tags: [go], when: "go is defined and go.enabled | bool"}
     - {name: yubikey , tags: [yubikey], when: "yubikey is defined and yubikey.enabled | bool"}
+    - {name: opensnitch , tags: [opensnitch], when: "opensnitch is defined and opensnitch.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo
