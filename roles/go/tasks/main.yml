@@ -6,17 +6,23 @@
   changed_when: false
 - name: Current version
   debug: msg="go_version={{ go_version.stdout }}"
-- name: Stop if already installed
-  meta: end_play
+- name: Initialize fact
+  set_fact:
+    install_new_version: true
+- name: Skip install if already installed
+  set_fact:
+    install_new_version: false
   when: go_version is defined and go_version.stdout != "" and go_version.stdout is version_compare(go.version, '>=', strict=True)
 
 # Install
 - name: New version
   debug: msg="installing go version {{ go.version }}"
+  when: "install_new_version"
 - name: Make tmp folder
   file:
     state: directory
     path: "/tmp/ansible/golang"
+  when: "install_new_version"
 - name: Make user folders
   file:
     path: "{{ user_home_directory }}/{{ item }}"
@@ -27,23 +33,35 @@
   with_items:
     - go
     - go/bin
+  when: "install_new_version"
 - name: Remove old version
   file:
     state: absent
     path: /usr/local/go
+  when: "install_new_version"
 - name: Download new version
   get_url:
     url: "https://storage.googleapis.com/golang/go{{ go.version }}.linux-amd64.tar.gz"
     dest: "/tmp/ansible/golang"
     mode: 0440
+  when: "install_new_version"
 - name: Unpack new version
   unarchive:
     src: "/tmp/ansible/golang/go{{ go.version }}.linux-amd64.tar.gz"
     dest: /usr/local
     copy: no
+  when: "install_new_version"
 
 # Cleanup
 - name: Remove tmp folder
   file:
     state: absent
     path: "/tmp/ansible/golang"
+  when: "install_new_version"
+
+# Install golang packages
+- name: 
+  shell: "go install {{ item }}"
+  with_items: "{{ go.install }}"
+  when: go.install is defined
+  become: no

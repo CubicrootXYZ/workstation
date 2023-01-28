@@ -11,6 +11,10 @@ go:
     gonoproxy: null
     gonosumdb: null
     goproxy: null
+  install: # Go packages to install
+    - github.com/google/pprof@latest
+    - golang.org/x/vuln/cmd/govulncheck@latest
+    - github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
 # Yubikey setup
 yubikey:
