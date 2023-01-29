@@ -1,0 +1,35 @@
+- name: Install apt packages
+  apt:
+    pkg:
+      - curl
+      - gnupg
+      - ca-certificates
+      - lsb-release
+    state: latest
+    update_cache: true
+- name: Create directory for keyring
+  file:
+    state: directory
+    path: "/etc/apt/keyrings"
+- name: Download docker GPG key
+  shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
+- name: Add docker repo to apt
+  template:
+    src: "docker.list.j2"
+    dest: "/etc/apt/sources.list.d/docker.list"
+- name: Install docker and docker-compose
+  apt:
+    pkg:
+      - docker-ce 
+      - docker-ce-cli 
+      - containerd.io 
+      - docker-compose-plugin
+    state: latest
+    update_cache: true
+- name: Add user to docker group
+  user:
+    name: '{{ user }}'
+    groups: docker
+    append: yes
+- name: Reload group
+  shell: newgrp docker
