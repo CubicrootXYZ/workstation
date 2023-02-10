@@ -40,11 +40,14 @@ alias git-amend='git add . && git commit --amend --no-edit'
 alias gsu='git submodule update --init --rebase --recursive'
 {% endif %}
 
-export EDITOR='nano'
-
 # Enable fzf search
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # Use starship prompt
 eval "$(starship init bash)"
+
+# Terminal settings
+export TERM='xterm'
+export EDITOR='nano'
+export PROMPT_COMMAND='echo -ne "\033]0;@${HOSTNAME}: $(basename $(dirname "$PWD"))/$(basename "$PWD")\007"'
 
