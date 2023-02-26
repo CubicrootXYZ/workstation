@@ -56,3 +56,9 @@ opensnitch:
 # Docker settings
 docker:
   enabled: false
+
+# Teamspeak settings
+# Requres manual steps, you will be prompted by ansible
+ts:
+  enabled: false
+  version: "3.5.6"

@@ -10,6 +10,7 @@
     - {name: yubikey , tags: [yubikey], when: "yubikey is defined and yubikey.enabled | bool"}
     - {name: opensnitch , tags: [opensnitch], when: "opensnitch is defined and opensnitch.enabled | bool"}
     - {name: docker , tags: [docker], when: "docker is defined and docker.enabled | bool"}
+    - {name: teamspeak , tags: [teamspeak, ts], when: "ts is defined and ts.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo
