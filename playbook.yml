@@ -21,4 +21,3 @@
     gnome_user: "{{ user }}"
   vars_files:
     - roles/gnome/vars.yml
-    

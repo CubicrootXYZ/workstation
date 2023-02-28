@@ -26,18 +26,22 @@ export GOPROXY='{{go.env.goproxy}}'
 alias vpn-up='nmcli connection up "{{ wireguard.alias_vpn_name }}"'
 alias vpn-down='nmcli connection down "{{ wireguard.alias_vpn_name }}"'
 alias vpn='nm-connection-editor'
-{%- endif %}
+{% endif %}
 
 {% if rust is defined and rust.enabled -%}
 # Rust setup
 . "$HOME/.cargo/env"
-{%- endif %}
+{% endif %}
 
 {% if git is defined and git.enabled %} 
 alias git-main='git checkout main && git pull'
 alias git-su='git submodule -q foreach git pull -q origin main'
 alias git-amend='git add . && git commit --amend --no-edit'
 alias gsu='git submodule update --init --rebase --recursive'
+{% endif %}
+
+{% if docker is defined and docker.enabled -%}
+alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 {% endif %}
 
 # Enable fzf search
