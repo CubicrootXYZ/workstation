@@ -59,7 +59,17 @@
     path: "/tmp/ansible/golang"
   when: "install_new_version"
 
-# Install golang packages
+# Install gcommon olang packages
+- name: 
+  shell: "go install {{ item }}"
+  with_items:
+    - github.com/google/pprof@latest
+    - golang.org/x/vuln/cmd/govulncheck@latest
+    - github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    - github.com/ktr0731/evans@latest
+  become: no
+
+# Install additional golang packages
 - name: 
   shell: "go install {{ item }}"
   with_items: "{{ go.install }}"
