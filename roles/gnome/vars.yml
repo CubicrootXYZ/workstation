@@ -9,6 +9,10 @@
           https://extensions.gnome.org/extension-data/windowIsReady_Removernunofarrucagmail.com.v19.shell-extension.zip
         id: 1007
         enable: yes # Window ready notification remover 
+      - url: >
+          https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v45.shell-extension.zip
+        id: 779
+        enable: yes # Clipboard history 
     gnome_gsettings:
       # Dash to Dock Settings 
       - schema: org.gnome.shell.extensions.dash-to-dock
