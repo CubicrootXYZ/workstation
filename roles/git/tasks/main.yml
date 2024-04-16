@@ -8,4 +8,7 @@
   template:
     src: ".gitconfig.j2"
     dest: "{{ user_home_directory }}/.gitconfig"
-  
+- name: Template git ignore
+  template:
+    src: ".gitignore.j2"
+    dest: "{{ user_home_directory }}/.gitignore"
