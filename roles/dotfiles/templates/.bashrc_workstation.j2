@@ -3,7 +3,7 @@
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh # enable yubikey as SSH agent
 alias yubi-fix='gpg-connect-agent updatestartuptty /bye'
 alias yubi-restart='sudo systemctl restart pcscd.service && systemctl --user restart gpg-agent.service'
-{%- endif %}
+{% endif %}
 
 {% if go is defined and go.enabled -%}
 # Golang setup
@@ -19,7 +19,11 @@ export GONOSUMDB='{{go.env.gonosumdb}}'
 {% if go.env.goproxy -%}
 export GOPROXY='{{go.env.goproxy}}'
 {% endif %}
-{%- endif %}
+
+# golangci-lint setup
+alias gci=golangci-lint run
+alias gci-fix=golangci-lint run --fix --max-same-issues 10 --max-issues-per-linter 50
+{% endif %}
 
 {% if wireguard is defined and wireguard.enabled -%}
 # Wireguard VPN aliases
@@ -33,7 +37,7 @@ alias vpn='nm-connection-editor'
 . "$HOME/.cargo/env"
 {% endif %}
 
-{% if git is defined and git.enabled %} 
+{% if git is defined and git.enabled -%} 
 alias git-main='git checkout main && git pull'
 alias git-su='git submodule -q foreach git pull -q origin main'
 alias git-amend='git add . && git commit --amend --no-edit'
