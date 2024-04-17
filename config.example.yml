@@ -34,6 +34,7 @@ git:
   enabled: false
   email: name@example.com
   name: username
+  signingkey: abcde
 
 # Gnome settings
 gnome:
@@ -52,7 +53,7 @@ packages:
 opensnitch:
   enabled: false
   version: 1.6.0-rc.4
-  
+
 # Docker settings
 docker:
   enabled: false

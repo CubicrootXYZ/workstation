@@ -1,5 +1,8 @@
 [user]
 	email = {{ git.email }}
 	name = {{ git.name }}
+	{% if git.signingkey is defined %%}
+	signingkey = {{ git.signingkey }}
+	{% endif %}
 [core]
     excludesfile = {{ user_home_directory }}/.gitignore
