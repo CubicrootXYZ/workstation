@@ -1,7 +1,7 @@
 [user]
 	email = {{ git.email }}
 	name = {{ git.name }}
-	{% if git.signingkey is defined %%}
+	{% if git.signingkey is defined %}
 	signingkey = {{ git.signingkey }}
 	{% endif %}
 [core]
