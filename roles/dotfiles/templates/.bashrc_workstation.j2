@@ -21,8 +21,8 @@ export GOPROXY='{{go.env.goproxy}}'
 {% endif %}
 
 # golangci-lint setup
-alias gci=golangci-lint run
-alias gci-fix=golangci-lint run --fix --max-same-issues 10 --max-issues-per-linter 50
+alias gci='golangci-lint run'
+alias gci-fix='golangci-lint run --fix --max-same-issues 10 --max-issues-per-linter 50'
 {% endif %}
 
 {% if wireguard is defined and wireguard.enabled -%}
