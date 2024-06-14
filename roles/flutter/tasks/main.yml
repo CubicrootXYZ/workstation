@@ -1,3 +1,17 @@
+# Pre-Checks
+- name: Initialize fact
+  set_fact:
+    install_android_studio: true
+- name: Check if Android Studio is present
+  stat:
+    path: /usr/local/android-studio/bin/studio.sh
+  register: android_studio_folder_check
+- name: Skip install if already installed
+  set_fact:
+    install_android_studio: false
+  when: android_studio_folder_check.stat.exists
+
+# Installation
 - name: Install dependencies via apt
   apt:
     state: latest
@@ -18,27 +32,32 @@
   file:
     state: absent
     path: "/usr/local/android-studio"
+  when: "install_android_studio"
 - name: Make required folders
   file:
     state: directory
     path: "{{ item }}"
   with_items:
     - "/tmp/android-studio-download"
+  when: "install_android_studio"
 - name: Download Android Studio
   get_url:
     url: "https://r2---sn-4g5edndl.gvt1.com/edgedl/android/studio/ide-zips/2024.1.1.11/android-studio-2024.1.1.11-linux.tar.gz?cms_redirect=yes&mh=T4&mip=2a02:3100:5b8b:9b01:d30e:34d7:7291:cc09&mm=28&mn=sn-4g5edndl&ms=nvh&mt=1718391133&mv=m&mvi=2&pl=42&rmhost=r5---sn-4g5edndl.gvt1.com&shardbypass=sd&smhost=r1---sn-4g5edndk.gvt1.com"
     dest: "/tmp/android-studio-download/android-studio.tar.gz"
     mode: 0774
+  when: "install_android_studio"
 - name: Unpack Android Studio to /usr/local
   unarchive:
     src: "/tmp/android-studio-download/android-studio.tar.gz"
     dest: /usr/local/
     copy: no
+  when: "install_android_studio"
 - name: Remove tmp folder
   file:
     state: absent
     path: "/tmp/android-studio-download"
 
+# Further instructions
 - name: Further manual instructions
   debug:
     msg: "Run 'bash /usr/local/android-studio/bin/studio.sh'"
