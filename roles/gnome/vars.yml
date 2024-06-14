@@ -1,309 +1,309 @@
-    gnome_extensions:
-      - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v52.shell-extension.zip
-        id: 1160
-        enable: yes # Dash to panel
-      - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v36.shell-extension.zip
-        id: 3733 
-        enable: yes # Tiling Assistant
-      - url: >
-          https://extensions.gnome.org/extension-data/windowIsReady_Removernunofarrucagmail.com.v19.shell-extension.zip
-        id: 1007
-        enable: yes # Window ready notification remover 
-      - url: >
-          https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v45.shell-extension.zip
-        id: 779
-        enable: yes # Clipboard history 
-    gnome_gsettings:
-      # Dash to Dock Settings 
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-trash
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: multi-monitor
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: preferred-monitor-by-connector
-        value: 'primary'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: intellihide
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: animation-time
-        value: '0.2'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: animate-show-apps
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: apply-glossy-effect
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: autohide
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: background-color
-        value: '#ffffff'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: background-opacity
-        value: '0.8'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: click-action
-        value: 'focus-minimize-or-previews'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: custom-theme-running-dots-border-color
-        value: '#ffffff'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: custom-theme-shrink
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: dash-max-icon-size
-        value: '20'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: disable-overview-on-startup
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: dock-fixed
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: dock-position
-        value: 'BOTTOM'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: extend-height
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: height-fraction
-        value: '0.9'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: hide-delay
-        value: '0.2'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: icon-size-fixed
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: isolate-locations
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: isolate-monitors
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: isolate-workspaces
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: max-alpha
-        value: '0.8'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: middle-click-action
-        value: 'launch'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: min-alpha
-        value: '0.2'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: minimize-shift
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: running-indicator-style
-        value: 'DOTS'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: scroll-action
-        value: 'switch-workspace'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: scroll-switch-workspace
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: scroll-to-focused-application
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: shift-click-action
-        value: 'launch'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: shift-middle-click-action
-        value: 'minimize'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-delay
-        value: '0.25'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-favorites
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-mounts
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-mounts-network
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-mounts-only-mounted
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-running
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-show-apps-button
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: show-windows-preview
-        value: 'true'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: transparency-mode
-        value: 'DEFAULT'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: unity-backlit-items
-        value: 'false'
-      - schema: org.gnome.shell.extensions.dash-to-dock
-        key: workspace-agnostic-urgent-windows
-        value: 'true'
-    gnome_dconf:
-      # Tiling Assistant Settings
-      - key: /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup
-        value: "false"
-      - key: /org/gnome/shell/extensions/tiling-assistant/restore-window
-        value: "['<Super>Down']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottom-half
-        value: "['<Super>KP_2']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottomleft-quarter
-        value: "['<Super>adiaeresis']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottomright-quarter
-        value: "['<Super>numbersign']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-left-half
-        value: "['<Super>Left','<Super>KP_4']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-maximize
-        value: "['<Super>Up','<Super>KP_5']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-right-half
-        value: "['<Super>Right','<Super>KP_6']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-top-half
-        value: "['<Super>KP_8']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-topleft-quarter
-        value: "['<Super>udiaeresis']"
-      - key: /org/gnome/shell/extensions/tiling-assistant/tile-topright-quarter
-        value: "['<Super>plus']"
-      # Gnome settings
-      - key: /org/gnome/desktop/background/picture-uri
-        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
-      - key: /org/gnome/desktop/background/picture-uri-dark
-        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
-      - key: /org/gnome/desktop/background/primary-color
-        value: "'#000000'"
-      - key: /org/gnome/desktop/background/secondary-color
-        value: "'#000000'"
-      - key: /org/gnome/desktop/interface/clock-show-seconds
-        value: "false"
-      - key: /org/gnome/desktop/interface/clock-show-weekday
-        value: "true"
-      - key: /org/gnome/desktop/interface/color-scheme
-        value: "'prefer-dark'"
-      - key: /org/gnome/desktop/interface/enable-hot-corners
-        value: "false"
-      - key: /org/gnome/desktop/interface/gtk-theme
-        value: "'Yaru-dark'"
-      - key: /org/gnome/desktop/interface/icon-theme
-        value: "'Yaru'"
-      - key: /org/gnome/desktop/interface/show-battery-percentage
-        value: "true"
-      - key: /org/gnome/desktop/screensaver/picture-uri
-        value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
-      - key: /org/gnome/desktop/calendar/show-weekdate
-        value: "true"
-      - key: /org/gnome/shell/extensions/ding/show-home
-        value: "false"
-      # Dash to Panel setting
-      - key: /org/gnome/shell/extensions/dash-to-panel/animate-appicon-hover
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/appicon-margin
-        value: "3"
-      - key: /org/gnome/shell/extensions/dash-to-panel/appicon-padding
-        value: "4"
-      - key: /org/gnome/shell/extensions/dash-to-panel/click-action
-        value: "'CYCLE'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-1
-        value: "'#e5a50a'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-2
-        value: "'#e5a50a'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-3
-        value: "'#e5a50a'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-4
-        value: "'#e5a50a'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-dominant
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-override
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-1
-        value: "'#e66100'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-2
-        value: "'#e66100'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-3
-        value: "'#e66100'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-4
-        value: "'#e66100'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-different
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-position
-        value: "'BOTTOM'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-size
-        value: "3"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-focused
-        value: "'SEGMENTED'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-unfocused
-        value: "'SQUARES'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/intellihide
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/isolate-monitors
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/isolate-workspaces
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/leftbox-padding
-        value: "-1"
-      - key: /org/gnome/shell/extensions/dash-to-panel/middle-click-action
-        value: "'LAUNCH'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/multi-monitors
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/shift-click-action
-        value: "'LAUNCH'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/shift-middle-click-action
-        value: "'LAUNCH'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-appmenu
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-apps-icon-side-padding
-        value: "6"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-apps-override-escape
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-favorites
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-window-previews
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-window-previews-timeout
-        value: "200"
-      - key: /org/gnome/shell/extensions/dash-to-panel/status-icon-padding
-        value: "-1"
-      - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-dash
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-top-panel
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-bg-color
-        value: "'#000000'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-panel-opacity
-        value: "0.5"
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-bg
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-gradient
-        value: "false"
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-opacity
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/tray-padding
-        value: "-1"
-      - key: /org/gnome/shell/extensions/dash-to-panel/tray-size
-        value: "0"
-      - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-hide-immediate-click
-        value: "true"
-      - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-size
-        value: "150"
-      - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-title-position
-        value: "'BOTTOM'"
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-sizes
-        value: "'{\"0\":27,\"1\":27,\"2\":27}'"
-      # Shortcuts
-      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding
-        value: "'Print'"
-      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command
-        value: "'flameshot gui'"
-      - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name
-        value: "'Flameshot'"
+gnome_extensions:
+  - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v52.shell-extension.zip
+    id: 1160
+    enable: yes # Dash to panel
+  - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v36.shell-extension.zip
+    id: 3733
+    enable: yes # Tiling Assistant
+  - url: >
+      https://extensions.gnome.org/extension-data/windowIsReady_Removernunofarrucagmail.com.v19.shell-extension.zip
+    id: 1007
+    enable: yes # Window ready notification remover
+  - url: >
+      https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v45.shell-extension.zip
+    id: 779
+    enable: yes # Clipboard history
+gnome_gsettings:
+  # Dash to Dock Settings
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-trash
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: multi-monitor
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: preferred-monitor-by-connector
+    value: "primary"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: intellihide
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: animation-time
+    value: "0.2"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: animate-show-apps
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: apply-glossy-effect
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: autohide
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: background-color
+    value: "#ffffff"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: background-opacity
+    value: "0.8"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: click-action
+    value: "focus-minimize-or-previews"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: custom-theme-running-dots-border-color
+    value: "#ffffff"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: custom-theme-shrink
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: dash-max-icon-size
+    value: "20"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: disable-overview-on-startup
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: dock-fixed
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: dock-position
+    value: "BOTTOM"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: extend-height
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: height-fraction
+    value: "0.9"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: hide-delay
+    value: "0.2"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: icon-size-fixed
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: isolate-locations
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: isolate-monitors
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: isolate-workspaces
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: max-alpha
+    value: "0.8"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: middle-click-action
+    value: "launch"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: min-alpha
+    value: "0.2"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: minimize-shift
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: running-indicator-style
+    value: "DOTS"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: scroll-action
+    value: "switch-workspace"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: scroll-switch-workspace
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: scroll-to-focused-application
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: shift-click-action
+    value: "launch"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: shift-middle-click-action
+    value: "minimize"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-delay
+    value: "0.25"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-favorites
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-mounts
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-mounts-network
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-mounts-only-mounted
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-running
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-show-apps-button
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: show-windows-preview
+    value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: transparency-mode
+    value: "DEFAULT"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: unity-backlit-items
+    value: "false"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: workspace-agnostic-urgent-windows
+    value: "true"
+gnome_dconf:
+  # Tiling Assistant Settings
+  - key: /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup
+    value: "false"
+  - key: /org/gnome/shell/extensions/tiling-assistant/restore-window
+    value: "['<Super>Down']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottom-half
+    value: "['<Super>KP_2']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottomleft-quarter
+    value: "['<Super>adiaeresis']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-bottomright-quarter
+    value: "['<Super>numbersign']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-left-half
+    value: "['<Super>Left','<Super>KP_4']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-maximize
+    value: "['<Super>Up','<Super>KP_5']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-right-half
+    value: "['<Super>Right','<Super>KP_6']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-top-half
+    value: "['<Super>KP_8']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-topleft-quarter
+    value: "['<Super>udiaeresis']"
+  - key: /org/gnome/shell/extensions/tiling-assistant/tile-topright-quarter
+    value: "['<Super>plus']"
+  # Gnome settings
+  - key: /org/gnome/desktop/background/picture-uri
+    value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+  - key: /org/gnome/desktop/background/picture-uri-dark
+    value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+  - key: /org/gnome/desktop/background/primary-color
+    value: "'#000000'"
+  - key: /org/gnome/desktop/background/secondary-color
+    value: "'#000000'"
+  - key: /org/gnome/desktop/interface/clock-show-seconds
+    value: "false"
+  - key: /org/gnome/desktop/interface/clock-show-weekday
+    value: "true"
+  - key: /org/gnome/desktop/interface/color-scheme
+    value: "'prefer-dark'"
+  - key: /org/gnome/desktop/interface/enable-hot-corners
+    value: "false"
+  - key: /org/gnome/desktop/interface/gtk-theme
+    value: "'Yaru-dark'"
+  - key: /org/gnome/desktop/interface/icon-theme
+    value: "'Yaru'"
+  - key: /org/gnome/desktop/interface/show-battery-percentage
+    value: "true"
+  - key: /org/gnome/desktop/screensaver/picture-uri
+    value: "'file://{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}'"
+  - key: /org/gnome/desktop/calendar/show-weekdate
+    value: "true"
+  - key: /org/gnome/shell/extensions/ding/show-home
+    value: "false"
+  # Dash to Panel setting
+  - key: /org/gnome/shell/extensions/dash-to-panel/animate-appicon-hover
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/appicon-margin
+    value: "3"
+  - key: /org/gnome/shell/extensions/dash-to-panel/appicon-padding
+    value: "4"
+  - key: /org/gnome/shell/extensions/dash-to-panel/click-action
+    value: "'CYCLE'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-1
+    value: "'#e5a50a'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-2
+    value: "'#e5a50a'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-3
+    value: "'#e5a50a'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-4
+    value: "'#e5a50a'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-dominant
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-override
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-1
+    value: "'#e66100'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-2
+    value: "'#e66100'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-3
+    value: "'#e66100'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-4
+    value: "'#e66100'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-unfocused-different
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-position
+    value: "'BOTTOM'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-size
+    value: "3"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-focused
+    value: "'SEGMENTED'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-unfocused
+    value: "'SQUARES'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/group-apps
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/intellihide
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/isolate-monitors
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/isolate-workspaces
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/leftbox-padding
+    value: "-1"
+  - key: /org/gnome/shell/extensions/dash-to-panel/middle-click-action
+    value: "'LAUNCH'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/multi-monitors
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/shift-click-action
+    value: "'LAUNCH'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/shift-middle-click-action
+    value: "'LAUNCH'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-appmenu
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-apps-icon-side-padding
+    value: "6"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-apps-override-escape
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-favorites
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-window-previews
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/show-window-previews-timeout
+    value: "200"
+  - key: /org/gnome/shell/extensions/dash-to-panel/status-icon-padding
+    value: "-1"
+  - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-dash
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-top-panel
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/trans-bg-color
+    value: "'#000000'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/trans-panel-opacity
+    value: "0.5"
+  - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-bg
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-gradient
+    value: "false"
+  - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-opacity
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/tray-padding
+    value: "-1"
+  - key: /org/gnome/shell/extensions/dash-to-panel/tray-size
+    value: "0"
+  - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-hide-immediate-click
+    value: "true"
+  - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-size
+    value: "150"
+  - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-title-position
+    value: "'BOTTOM'"
+  - key: /org/gnome/shell/extensions/dash-to-panel/panel-sizes
+    value: '''{"0":27,"1":27,"2":27}'''
+  # Shortcuts
+  - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding
+    value: "'Print'"
+  - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command
+    value: "'flameshot gui'"
+  - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name
+    value: "'Flameshot'"

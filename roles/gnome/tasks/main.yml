@@ -1,6 +1,6 @@
-- name: Download wallpaper    
+- name: Download wallpaper
   get_url:
-    url: "{{ gnome.wallpaper }}"   
+    url: "{{ gnome.wallpaper }}"
     dest: "{{ user_home_directory }}/gnome_wallpaper.{{ gnome.wallpaper.split('.')[-1] }}"
     mode: 0775
 - name: Template GTK css
