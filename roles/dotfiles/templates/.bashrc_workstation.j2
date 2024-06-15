@@ -48,6 +48,10 @@ alias gsu='git submodule update --init --rebase --recursive'
 alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 {% endif %}
 
+{% if flutter is defined and flutter.enabled %}
+export PATH = "{{ user_home_directory }}/flutter/flutter/bin:$PATH"
+{% endif %}
+
 # Enable fzf search
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
