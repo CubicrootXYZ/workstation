@@ -6,3 +6,9 @@
 	{% endif %}
 [core]
     excludesfile = {{ user_home_directory }}/.gitignore
+[rerere]
+	enabled = true
+[commit]
+	{% if git.enableGlobalSigning is defined and git.enableGlobalSigning%}
+    gpgsign = true
+	{% endif %}

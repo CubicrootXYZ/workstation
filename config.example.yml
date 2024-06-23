@@ -34,7 +34,11 @@ git:
   enabled: false
   email: name@example.com
   name: username
+  # GPG key used for signing: "gpg --list-secret-keys --keyid-format LONG"
+  # Line with [S] the part after "rsaXXXX/"
   signingkey: abcde
+  # Enables commit signing globally. Not required if signingkey set.
+  enableGlobalSigning: false
 
 # Gnome settings
 gnome:

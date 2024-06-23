@@ -1,5 +1,6 @@
 - name: Install dependencies
-  apt:
+  become: true
+  ansible.builtin.apt:
     pkg:
       - git
     state: latest
