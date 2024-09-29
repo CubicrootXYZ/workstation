@@ -1,5 +1,5 @@
 gnome_extensions:
-  - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v52.shell-extension.zip
+  - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v63.shell-extension.zip
     id: 1160
     enable: yes # Dash to panel
   - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v36.shell-extension.zip

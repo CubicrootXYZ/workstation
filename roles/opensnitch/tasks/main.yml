@@ -30,9 +30,11 @@
   pip:
     name: grpcio
     version: 1.44.0
+    break_system_packages: true
 - name: Install pip dependency
   pip:
     name: qt-material
+    break_system_packages: true
 - name: Template autostart
   template:
     src: "opensnitch-gui.desktop.j2"

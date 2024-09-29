@@ -7,9 +7,9 @@ alias yubi-restart='sudo systemctl restart pcscd.service && systemctl --user res
 
 {% if go is defined and go.enabled -%}
 # Golang setup
-export GOROOT=/usr/local/go 
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$GOROOT/bin:/usr/local/go/bin:$HOME/go/bin:$PATH 
+export PATH=$GOROOT/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
 {% if go.env.gonoproxy -%}
 export GONOPROXY='{{go.env.gonoproxy}}'
 {% endif %}
@@ -37,7 +37,7 @@ alias vpn='nm-connection-editor'
 . "$HOME/.cargo/env"
 {% endif %}
 
-{% if git is defined and git.enabled -%} 
+{% if git is defined and git.enabled -%}
 alias git-main='git checkout main && git pull'
 alias git-su='git submodule -q foreach git pull -q origin main'
 alias git-amend='git add . && git commit --amend --no-edit'
@@ -49,7 +49,8 @@ alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -
 {% endif %}
 
 {% if flutter is defined and flutter.enabled %}
-export PATH = "{{ user_home_directory }}/flutter/flutter/bin:$PATH"
+# Flutter setup
+export PATH="{{ user_home_directory }}/flutter/flutter/bin:$PATH"
 {% endif %}
 
 # Enable fzf search
