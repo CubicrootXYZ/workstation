@@ -150,6 +150,9 @@ gnome_gsettings:
   - schema: org.gnome.shell.extensions.dash-to-dock
     key: workspace-agnostic-urgent-windows
     value: "true"
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: manualhide
+    value: "true"
 gnome_dconf:
   # Tiling Assistant Settings
   - key: /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup
