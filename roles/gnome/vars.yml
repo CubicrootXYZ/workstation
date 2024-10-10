@@ -2,15 +2,15 @@ gnome_extensions:
   - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v63.shell-extension.zip
     id: 1160
     enable: yes # Dash to panel
-  - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v36.shell-extension.zip
+  - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v48.shell-extension.zip
     id: 3733
     enable: yes # Tiling Assistant
   - url: >
-      https://extensions.gnome.org/extension-data/windowIsReady_Removernunofarrucagmail.com.v19.shell-extension.zip
+      https://extensions.gnome.org/extension-data/windowIsReady_Removernunofarrucagmail.com.v23.shell-extension.zip
     id: 1007
     enable: yes # Window ready notification remover
   - url: >
-      https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v45.shell-extension.zip
+      https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v65.shell-extension.zip
     id: 779
     enable: yes # Clipboard history
 gnome_gsettings:
