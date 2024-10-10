@@ -40,8 +40,9 @@ alias vpn='nm-connection-editor'
 {% if git is defined and git.enabled -%}
 alias git-main='git checkout main && git pull'
 alias git-su='git submodule -q foreach git pull -q origin main'
-alias git-amend='git add . && git commit --amend --no-edit'
+alias git-amend='git add . && git commit {% if git.signingkey is defined or (git.enableGlobalSigning is defined and git.enableGlobalSigning) %}-S{% endif %} --amend --no-edit'
 alias gsu='git submodule update --init --rebase --recursive'
+alias git-continue='git add . && git rebase --continue'
 {% endif %}
 
 {% if docker is defined and docker.enabled -%}
