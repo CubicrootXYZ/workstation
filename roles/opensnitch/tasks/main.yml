@@ -26,18 +26,12 @@
 - name: Install OpenSnitch UI
   apt:
     deb: "{{ user_home_directory }}/deb/python3-opensnitch-ui_{{ opensnitch.version }}-1_all.deb"
-- name: Create venv
-  command:
-    cmd: python3 -m venv /usr/home/venvs/opensnitch
 - name: Install pip dependency
   pip:
-    name: grpcio
-    version: 1.44.0
-    virtualenv: /usr/home/venvs/opensnitch
-- name: Install pip dependency
-  pip:
-    name: qt-material
-    virtualenv: /usr/home/venvs/opensnitch
+    name: 
+    - grpcio>1.44.0
+    - qt-material
+    break_system_packages: true
 - name: Template autostart
   template:
     src: "opensnitch-gui.desktop.j2"
