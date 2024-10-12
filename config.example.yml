@@ -71,3 +71,8 @@ ts:
 # Flutter settings
 flutter:
   enabled: false
+
+# Grub settings
+grub:
+  enabled: false
+  hide_bootmenu: true

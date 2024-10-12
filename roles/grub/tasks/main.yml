@@ -1,0 +1,5 @@
+- name: Template custom grub config
+  template:
+    src: "custom.cfg.j2"
+    dest: "/boot/grub/custom.cfg"
+  when: "grub.hide_bootmenu"
