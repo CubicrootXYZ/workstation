@@ -12,6 +12,7 @@
     - {name: docker , tags: [docker], when: "docker is defined and docker.enabled | bool"}
     - {name: teamspeak , tags: [teamspeak, ts], when: "ts is defined and ts.enabled | bool"}
     - {name: flutter , tags: [flutter], when: "flutter is defined and flutter.enabled | bool"}
+    - {name: seafile , tags: [seafile]}
 - hosts: all
   become: yes
   become_method: sudo

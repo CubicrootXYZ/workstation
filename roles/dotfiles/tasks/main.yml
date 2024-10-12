@@ -4,6 +4,7 @@
       - nano
     state: latest
     update_cache: true
+  become: true
 - name: Update .bashrc to include .bashrc_workstation
   lineinfile:
     dest: "{{ user_home_directory }}/.bashrc"
@@ -13,7 +14,7 @@
     path: ./roles/dotfiles/templates
     file_type: directory
     recurse: true
-    hidden: true 
+    hidden: true
   register: result
 - name: Create directories
   file:

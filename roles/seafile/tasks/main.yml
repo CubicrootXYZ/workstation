@@ -1,0 +1,16 @@
+- name: Download seafile GPG key
+  shell: "wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc"
+- name: Add docker repo to apt
+  template:
+    src: "seafile.list.j2"
+    dest: "/etc/apt/sources.list.d/seafile.list"
+- name: Install seafile-gui
+  apt:
+    pkg:
+      - seafile-gui
+    state: latest
+    update_cache: true
+- name: Template autostart
+  template:
+    src: "seafile.desktop.j2"
+    dest: "{{ user_home_directory }}/.config/autostart/seafile.desktop"
