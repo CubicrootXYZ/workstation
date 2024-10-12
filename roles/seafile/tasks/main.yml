@@ -10,7 +10,3 @@
       - seafile-gui
     state: latest
     update_cache: true
-- name: Template autostart
-  template:
-    src: "seafile.desktop.j2"
-    dest: "{{ user_home_directory }}/.config/autostart/seafile.desktop"
