@@ -52,6 +52,9 @@ packages:
     - keepassxc
   snap:
     - firefox
+  # Snap packages requiring --classic flag
+  snap_classic:
+    - code
 
 # OpenSnitch network firewall
 opensnitch:
@@ -76,3 +79,12 @@ flutter:
 grub:
   enabled: false
   hide_bootmenu: true
+
+# Darktable settings
+darktable:
+  enabled: false
+  version: 4.8.1
+
+# Seafile settings
+seafile:
+  enabled: false

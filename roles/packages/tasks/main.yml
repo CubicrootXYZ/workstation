@@ -4,7 +4,13 @@
     state: latest
     update_cache: true
 - name: Install snap packages
-  apt:
-    pkg: "{{ packages.snap }}"
-    state: latest
-    update_cache: true
+  snap:
+    name: "{{ packages.snap }}"
+    state: present
+- name: Install classic snap packages
+  snap:
+    name: "{{ item }}"
+    state: present
+    classic: true
+  with_items: "{{ packages.snap_classic }}"
+  when: "{{ packages.snap_classic is defined }}"

@@ -13,7 +13,8 @@
     - {name: teamspeak , tags: [teamspeak, ts], when: "ts is defined and ts.enabled | bool"}
     - {name: flutter , tags: [flutter], when: "flutter is defined and flutter.enabled | bool"}
     - {name: grub , tags: [grub], when: "grub is defined and grub.enabled | bool"}
-    - {name: seafile , tags: [seafile]}
+    - {name: seafile , tags: [seafile], when: "seafile is defined and seafile.enabled | bool"}
+    - {name: darktable , tags: [darktable], when: "darktable is defined and darktable.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo
