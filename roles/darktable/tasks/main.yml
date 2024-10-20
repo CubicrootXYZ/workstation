@@ -1,10 +1,22 @@
+- name: Install apt packages
+  apt:
+    pkg:
+      - libfuse2
+    state: latest
+    update_cache: true
 - name: Download Darktable
   get_url:
     url: "https://github.com/darktable-org/darktable/releases/download/release-{{ darktable.version }}/darktable-{{ darktable.version }}-x86_64.AppImage"   
     dest: "{{ user_home_directory }}/deb/darktable_{{ darktable.version }}.AppImage"
     mode: 0774
+- name: Make appimage executable
+  file: "dest={{ user_home_directory }}/deb/darktable_{{ darktable.version }}.AppImage mode=a+x"
 - name: Download Darktable Icon
   get_url:
-    url: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Darktable_icon.svg"   
-    dest: "{{ user_home_directory }}/deb/darktable.svg"
+    url: "https://avatars.githubusercontent.com/u/1561544?s=48&v=4"   
+    dest: "{{ user_home_directory }}/deb/darktable.png"
     mode: 0774
+- name: Create desktop file
+  template:
+    src: "darktable.desktop.j2"
+    dest: "{{ user_home_directory }}/.local/share/applications/darktable.desktop"
