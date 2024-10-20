@@ -10,3 +10,8 @@
       - seafile-gui
     state: latest
     update_cache: true
+# Enable "Hide Main Window on start" to hide the GUI on startup.
+- name: Template autostart
+  template:
+    src: "seafile.desktop.j2"
+    dest: "{{ user_home_directory }}/.config/autostart/seafile.desktop"
