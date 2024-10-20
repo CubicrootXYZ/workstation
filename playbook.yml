@@ -15,6 +15,7 @@
     - {name: grub , tags: [grub], when: "grub is defined and grub.enabled | bool"}
     - {name: seafile , tags: [seafile], when: "seafile is defined and seafile.enabled | bool"}
     - {name: darktable , tags: [darktable], when: "darktable is defined and darktable.enabled | bool"}
+    - {name: keepassxc , tags: [keepassxc, keepass], when: "keepassxc is defined and keepassxc.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo

@@ -1,0 +1,10 @@
+- name: Install keepassxc
+  apt:
+    pkg:
+      - keepassxc
+    state: latest
+    update_cache: true
+- name: Template autostart
+  template:
+    src: "keepassxc.desktop.j2"
+    dest: "{{ user_home_directory }}/.config/autostart/keepassxc.desktop"
