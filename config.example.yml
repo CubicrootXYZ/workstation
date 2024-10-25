@@ -92,3 +92,8 @@ seafile:
 # KeepassXC settings
 keepassxc:
   enabled: false
+
+# FreeCAD settings
+freecad:
+  enabled: false
+  version: 0.21.2
