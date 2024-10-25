@@ -6,7 +6,7 @@
     update_cache: true
 - name: Download FreeCAD
   get_url:
-    url: "https://github.com/FreeCAD/FreeCAD/releases/download/{{ freecad.version }}/FreeCAD-{{ freecad.version }}-Linux-x86_64.AppImage"   
+    url: "https://github.com/FreeCAD/FreeCAD/releases/download/1.0rc2/FreeCAD_1.0.0RC2-conda-Linux-x86_64-py311.AppImage"   
     dest: "{{ user_home_directory }}/deb/freecad_{{ freecad.version }}.AppImage"
     mode: 0774
 - name: Make appimage executable
@@ -15,3 +15,4 @@
   template:
     src: "freecad.desktop.j2"
     dest: "{{ user_home_directory }}/.local/share/applications/freecad.desktop"
+     

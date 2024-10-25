@@ -96,4 +96,5 @@ keepassxc:
 # FreeCAD settings
 freecad:
   enabled: false
-  version: 0.21.2
+  #Currently hardcoded to v1.0rc2
+  version: v1.0rc2
