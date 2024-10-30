@@ -8,6 +8,7 @@
   apt:
     pkg:
       - python3.13-full
+      - gdal-bin
     state: latest
     update_cache: true
 - name: Manually create the initial virtualenv
