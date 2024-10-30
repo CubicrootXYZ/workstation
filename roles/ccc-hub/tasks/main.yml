@@ -1,0 +1,20 @@
+- name: Install virtualenv
+  community.general.pipx:
+    name: virtualenv
+- name: Add deadsnakes PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:deadsnakes/ppa
+- name: Install apt packages
+  apt:
+    pkg:
+      - python3.13-full
+    state: latest
+    update_cache: true
+- name: Manually create the initial virtualenv
+  command: bash -c "{{ user_home_directory }}/.local/bin/virtualenv {{ user_home_directory }}/venvs/hub -p /usr/bin/python3.13"
+- name: Give default user permissions
+  ansible.builtin.file:
+    path: "{{ user_home_directory }}/venvs"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    recurse: true

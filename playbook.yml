@@ -17,6 +17,7 @@
     - {name: darktable , tags: [darktable], when: "darktable is defined and darktable.enabled | bool"}
     - {name: freecad , tags: [freecad], when: "freecad is defined and freecad.enabled | bool"}
     - {name: keepassxc , tags: [keepassxc, keepass], when: "keepassxc is defined and keepassxc.enabled | bool"}
+    - {name: ccc-hub , tags: [hub, ccc, ccc-hub], when: "ccc_hub is defined and ccc_hub.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo

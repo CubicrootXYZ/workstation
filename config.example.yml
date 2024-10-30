@@ -98,3 +98,7 @@ freecad:
   enabled: false
   #Currently hardcoded to v1.0rc2
   version: v1.0rc2
+
+# CCC hub settings
+ccc_hub: 
+  enabled: false
