@@ -102,3 +102,7 @@ freecad:
 # CCC hub settings
 ccc_hub: 
   enabled: false
+
+# gLabels settings
+glabels: 
+  enabled: false

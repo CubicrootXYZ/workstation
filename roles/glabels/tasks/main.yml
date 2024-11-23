@@ -1,0 +1,8 @@
+# Configure Brother QL-600:
+# Open http://localhost:631 -> Administration -> Add Printer -> Chose driver "Brother QL-650TD"
+- name: Install gLabels
+  apt:
+    pkg:
+      - glabels
+    state: latest
+    update_cache: true
