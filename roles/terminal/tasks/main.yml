@@ -5,12 +5,6 @@
       - fzf # Fuzzy finder
     state: latest
     update_cache: true
-- name: Make font folder
-  file:
-    state: directory
-    path: "{{ user_home_directory }}/.local/share/fonts"
-- name: Download font
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 - name: Install starship prompt
   shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
 - name: Template starship configuration

@@ -1,0 +1,63 @@
+# Check
+- name: check if font is present
+  command: fc-list "JetBrains Mono" -q
+  ignore_errors: yes
+  register: installed
+- debug: msg="jetbrains mono missing"
+  when: installed.rc != 0
+- name: Initialize fact
+  set_fact:
+    install_font: true
+- name: Skip install if already installed
+  set_fact:
+    install_font: false
+  when: installed.rc == 0
+# Remove leftovers from older versions
+- name: Delete old fonts folder
+  ansible.builtin.file:
+    state: absent
+    path: "{{ user_home_directory }}/.local/share/fonts"
+- name: Remove apt installed font
+  apt:
+    pkg:
+      - fonts-jetbrains-mono
+    state: absent
+# Download jetbrains-mono
+- name: Make tmp folder
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - "/tmp/ansible/fonts"
+    - "/tmp/ansible/fonts/jetbrains-mono"
+  when: install_font
+- name: Download font
+  get_url:
+    url: "https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip"
+    dest: "/tmp/ansible/fonts"
+    mode: 0440
+  when: install_font
+- name: Unpack font
+  unarchive:
+    src: "/tmp/ansible/fonts/JetBrainsMono-2.304.zip"
+    dest: /tmp/ansible/fonts/jetbrains-mono
+    copy: no
+  when: install_font
+- name: Make font folder
+  file:
+    state: directory
+    path: "/usr/share/fonts/truetype/jetbrains-mono"
+  when: install_font
+- name: Copy fonts
+  copy:
+    src: /tmp/ansible/fonts/jetbrains-mono/fonts/ttf/
+    dest: /usr/share/fonts/truetype/jetbrains-mono/
+  when: install_font
+# Cleanup
+- name: Remove tmp folder
+  file:
+    state: absent
+    path: "/tmp/ansible/fonts"
+# Refresh cache
+- name: refresh font cache
+  shell: fc-cache -f

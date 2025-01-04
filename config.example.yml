@@ -106,3 +106,7 @@ ccc_hub:
 # gLabels settings
 glabels: 
   enabled: false
+
+# fonts settings
+fonts:
+  enabled: false

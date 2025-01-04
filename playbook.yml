@@ -19,6 +19,7 @@
     - {name: keepassxc , tags: [keepassxc, keepass], when: "keepassxc is defined and keepassxc.enabled | bool"}
     - {name: ccc-hub , tags: [hub, ccc, ccc-hub], when: "ccc_hub is defined and ccc_hub.enabled | bool"}
     - {name: glabels , tags: [glabels, printer], when: "glabels is defined and glabels.enabled | bool"}
+    - {name: fonts , tags: [fonts], when: "fonts is defined and fonts.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo
