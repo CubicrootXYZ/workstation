@@ -38,6 +38,7 @@ alias vpn='nm-connection-editor'
 {% endif %}
 
 {% if git is defined and git.enabled -%}
+# Git setup
 alias git-main='git checkout main && git pull'
 alias git-su='git submodule -q foreach git pull -q origin main'
 alias git-amend='git add . && git commit {% if git.signingkey is defined or (git.enableGlobalSigning is defined and git.enableGlobalSigning) %}-S{% endif %} --amend --no-edit'
@@ -46,7 +47,16 @@ alias git-continue='git add . && git rebase --continue'
 {% endif %}
 
 {% if docker is defined and docker.enabled -%}
+# Docker setup
 alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+{% endif %}
+
+{% if ccc_hub is defined and ccc_hub.enabled -%}
+# Hub setup
+alias hub-format-check='pdm format && pdm lint'
+alias hub-format='ruff check . --fix && ruff format .'
+alias hub-msgs='pdm manage makemessages && pdm manage compilemessages && pdm manage collectstatic --noinput && docker compose restart hub'
+alias hub-source='source ~/venvs/hub/bin/activate'
 {% endif %}
 
 {% if flutter is defined and flutter.enabled %}
