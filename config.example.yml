@@ -110,3 +110,7 @@ glabels:
 # fonts settings
 fonts:
   enabled: false
+
+# VeraCrypt settings
+veracrypt:
+  enabled: false

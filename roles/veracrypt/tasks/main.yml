@@ -1,0 +1,9 @@
+- name: Add PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:unit193/encryption
+- name: Install apt packages
+  apt:
+    pkg:
+      - veracrypt
+    state: latest
+    update_cache: true
