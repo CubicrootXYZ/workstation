@@ -9,8 +9,13 @@
     pkg:
       - python3.13-full
       - gdal-bin
+      - npm
     state: latest
     update_cache: true
+- name: Install yarn
+  community.general.npm:
+    name: yarn
+    global: true
 - name: Manually create the initial virtualenv
   command: bash -c "{{ user_home_directory }}/.local/bin/virtualenv {{ user_home_directory }}/venvs/hub -p /usr/bin/python3.13"
 - name: Give default user permissions
