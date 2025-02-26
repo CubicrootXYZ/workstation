@@ -8,7 +8,33 @@
     excludesfile = {{ user_home_directory }}/.gitignore
 [rerere]
 	enabled = true
+	autoupdate = true
 [commit]
 	{% if git.enableGlobalSigning is defined and git.enableGlobalSigning%}
     gpgsign = true
 	{% endif %}
+	verbose = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[merge]
+    conflictstyle = zdiff3 
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
