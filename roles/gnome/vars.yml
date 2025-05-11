@@ -2,7 +2,7 @@
 customize_gnome__skip_restart_gnome_shell: true
 
 gnome_extensions:
-  - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v63.shell-extension.zip
+  - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v68.shell-extension.zip
     id: 1160
     enable: yes # Dash to panel
   - url: https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v48.shell-extension.zip
