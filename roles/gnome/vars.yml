@@ -1,3 +1,6 @@
+# Restarting gnome needs to be done manual for now, otherwise the anible process is getting killed.
+customize_gnome__skip_restart_gnome_shell: true
+
 gnome_extensions:
   - url: https://extensions.gnome.org/extension-data/dash-to-paneljderose9.github.com.v63.shell-extension.zip
     id: 1160
