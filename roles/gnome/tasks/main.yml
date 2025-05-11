@@ -7,9 +7,12 @@
   template:
     src: "gtk.css.j2"
     dest: "{{ user_home_directory }}/.config/gtk-3.0/gtk.css"
-- name: Install flameshot
+- name: Install packages
   apt:
     pkg:
       - flameshot
+      - gnome-shell-extensions
+      - gnome-tweaks
+      - gnome-tweak-tool
     state: latest
     update_cache: true
