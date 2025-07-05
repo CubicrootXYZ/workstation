@@ -62,6 +62,17 @@ alias hub-run='docker compose -f docker-compose.yml -f .local/docker-compose.yml
 
 alias hub-build-static='(cd src/plainui/ && sudo yarn build)'
 alias hub-build-msgs='uv run task manage makemessages && uv run task compilemessages && uv run task manage collectstatic --noinput && docker compose restart hub'
+alias hub-build-images='echo "Might need to run this multiple times" && docker compose build'
+
+hub-tests-core() {
+  (cd src/ && coverage run ./manage.py test core.tests$1 -v 2 --failfast)
+}
+hub-tests-api() {
+  (cd src/ && coverage run ./manage.py test api.tests$1 -v 2 --failfast)
+}
+hub-tests-plainui() {
+  (cd src/ && coverage run ./manage.py test plainui.tests$1 -v 2 --failfast)
+}
 {% endif %}
 
 {% if flutter is defined and flutter.enabled %}
