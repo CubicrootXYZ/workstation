@@ -53,11 +53,15 @@ alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -
 
 {% if ccc_hub is defined and ccc_hub.enabled -%}
 # Hub setup
-alias hub-format-check='uv run task format && uv run task lint'
-alias hub-format='ruff check . --fix && ruff format .'
-alias hub-msgs='uv run task manage makemessages && uv run task compilemessages && uv run task manage collectstatic --noinput && docker compose restart hub'
+alias hub-check-format='uv run task format && uv run task lint'
+
+alias hub-apply-format='ruff check . --fix && ruff format .'
+
 alias hub-source='source ~/venvs/hub/bin/activate'
 alias hub-run='docker compose -f docker-compose.yml -f .local/docker-compose.yml up'
+
+alias hub-build-static='(cd src/plainui/ && sudo yarn build)'
+alias hub-build-msgs='uv run task manage makemessages && uv run task compilemessages && uv run task manage collectstatic --noinput && docker compose restart hub'
 {% endif %}
 
 {% if flutter is defined and flutter.enabled %}
