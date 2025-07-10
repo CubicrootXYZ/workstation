@@ -73,6 +73,9 @@ hub-tests-api() {
 hub-tests-plainui() {
   (cd src/ && coverage run ./manage.py test plainui.tests$1 -v 2 --failfast)
 }
+hub-tests-backoffice() {
+  (cd src/ && coverage run ./manage.py test backoffice.tests$1 -v 2 --failfast)
+}
 {% endif %}
 
 {% if flutter is defined and flutter.enabled %}
