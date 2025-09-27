@@ -313,3 +313,20 @@ gnome_dconf:
     value: "'flameshot gui'"
   - key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name
     value: "'Flameshot'"
+  # BlackBox Terminal
+  - key: /com/raggesilver/BlackBox/delay-before-showing-floating-controls
+    value: "100"
+  - key: /com/raggesilver/BlackBox/font
+    value: "'JetBrainsMonoNL Nerd Font Mono 10'"
+  - key: /com/raggesilver/BlackBox/headerbar-drag-area
+    value: "true"
+  - key: /com/raggesilver/BlackBox/show-headerbar
+    value: "false"
+  - key: /com/raggesilver/BlackBox/floating-controls
+    value: "true"
+  - key: /com/raggesilver/BlackBox/terminal-bell
+    value: "false"
+  - key: /com/raggesilver/BlackBox/terminal-padding
+    value: "(uint32 10, uint32 10, uint32 10, uint32 10)"
+  - key: /com/raggesilver/BlackBox/theme-bold-is-bright
+    value: "true"
