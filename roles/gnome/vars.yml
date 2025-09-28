@@ -285,7 +285,7 @@ gnome_dconf:
   - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-top-panel
     value: "false"
   - key: /org/gnome/shell/extensions/dash-to-panel/trans-bg-color
-    value: "'#1a1a1a'"
+    value: "'#161616'"
   - key: /org/gnome/shell/extensions/dash-to-panel/trans-panel-opacity
     value: "1"
   - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-bg
@@ -293,7 +293,7 @@ gnome_dconf:
   - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-gradient
     value: "false"
   - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-opacity
-    value: "true"
+    value: "false"
   - key: /org/gnome/shell/extensions/dash-to-panel/tray-padding
     value: "-1"
   - key: /org/gnome/shell/extensions/dash-to-panel/tray-size
