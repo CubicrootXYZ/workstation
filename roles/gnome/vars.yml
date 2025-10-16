@@ -330,3 +330,5 @@ gnome_dconf:
     value: "(uint32 10, uint32 10, uint32 10, uint32 10)"
   - key: /com/raggesilver/BlackBox/theme-bold-is-bright
     value: "true"
+  - key: /com/raggesilver/BlackBox/notify-process-completion
+    value: "false"
