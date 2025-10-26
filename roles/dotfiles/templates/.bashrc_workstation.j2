@@ -56,7 +56,8 @@ alias docker-clean='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -
 alias hub-check-format='uv run task format && uv run task lint'
 
 alias hub-apply-format='ruff check . --fix && ruff format .'
-alias hub-apply-lint='djlint --profile django -e html --reformat --lint .'
+alias hub-apply-lint-jinja='djlint --profile jinja -e j2 --reformat --lint --extend-exclude venv-djlint .'
+alias hub-apply-all='hub-apply-format && hub-apply-lint-jinja'
 
 alias hub-source='source ~/venvs/hub/bin/activate'
 alias hub-run='docker compose -f docker-compose.yml -f .local/docker-compose.yml up'
