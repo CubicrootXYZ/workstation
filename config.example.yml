@@ -114,3 +114,10 @@ fonts:
 # VeraCrypt settings
 veracrypt:
   enabled: false
+
+tlp:
+  enabled: true
+
+  # Charging settings. 0 or 100 will disable that setting.
+  start_charge: 0
+  stop_charge: 0

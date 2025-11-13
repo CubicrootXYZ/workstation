@@ -21,6 +21,7 @@
     - {name: glabels , tags: [glabels, printer], when: "glabels is defined and glabels.enabled | bool"}
     - {name: fonts , tags: [fonts], when: "fonts is defined and fonts.enabled | bool"}
     - {name: veracrypt , tags: [veracrypt], when: "veracrypt is defined and veracrypt.enabled | bool"}
+    - {name: tlp , tags: [tlp], when: "tlp is defined and tlp.enabled | bool"}
 - hosts: all
   become: yes
   become_method: sudo

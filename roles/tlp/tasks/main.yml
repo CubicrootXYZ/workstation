@@ -1,0 +1,10 @@
+- name: Install apt packages
+  apt:
+    pkg:
+      - tlp
+    state: latest
+    update_cache: true
+- name: Template config
+  template:
+    src: "tlp.conf"
+    dest: "/etc/tlp.conf"
