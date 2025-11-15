@@ -26,12 +26,12 @@
 - name: Install OpenSnitch UI
   apt:
     deb: "{{ user_home_directory }}/deb/python3-opensnitch-ui_{{ opensnitch.version }}-1_all.deb"
-- name: Install pip dependency
-  pip:
-    name: 
-    - grpcio>1.44.0
-    - qt-material
-    break_system_packages: true
+- name: Install apt packages
+  apt:
+    pkg:
+      - python3-grpcio
+    state: latest
+    update_cache: true
 - name: Template autostart
   template:
     src: "opensnitch-gui.desktop.j2"
