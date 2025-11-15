@@ -1,6 +1,3 @@
-- name: Install virtualenv
-  community.general.pipx:
-    name: virtualenv
 - name: Add deadsnakes PPA
   ansible.builtin.apt_repository:
     repo: ppa:deadsnakes/ppa
@@ -10,8 +7,12 @@
       - python3.13-full
       - gdal-bin
       - npm
+      - pipx
     state: latest
     update_cache: true
+- name: Install virtualenv
+  community.general.pipx:
+    name: virtualenv
 - name: Install yarn
   community.general.npm:
     name: yarn
