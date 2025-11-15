@@ -12,7 +12,7 @@
     state: directory
     path: "/etc/apt/keyrings"
 - name: Download docker GPG key
-  shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor --no-tty -o /etc/apt/keyrings/docker.gpg"
+  shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor --no-tty --yes -o /etc/apt/keyrings/docker.gpg"
 - name: Add docker repo to apt
   template:
     src: "docker.list.j2"
