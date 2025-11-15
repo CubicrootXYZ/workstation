@@ -10,7 +10,11 @@ Install git and clone this repository.
 
 Install all dependencies by running `sudo bash install_dependencies.sh`.
 
-Copy the `config.example.yml` to `config.yml` and set your details. Then proceed with updating.
+Copy the `config.example.yml` to `config.yml` and set your details.
+
+Run `bash run.sh -t dotfiles` once, then reload the `.bashrc` file with `source ~/.bashrc`.
+
+Proceed with "Updating".
 
 ### Updating
 
