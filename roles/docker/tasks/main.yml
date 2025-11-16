@@ -20,16 +20,17 @@
 - name: Install docker and docker-compose
   apt:
     pkg:
-      - docker-ce 
-      - docker-ce-cli 
-      - containerd.io 
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
       - docker-compose-plugin
     state: latest
     update_cache: true
 - name: Add user to docker group
   user:
-    name: '{{ user }}'
+    name: "{{ user }}"
     groups: docker
     append: yes
-- name: Reload group
-  shell: newgrp docker
+- name: Further manual instructions
+  debug:
+    msg: "Login again or run 'newgrp docker' to reload group assignment"
