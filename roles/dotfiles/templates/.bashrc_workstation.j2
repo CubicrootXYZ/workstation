@@ -60,7 +60,7 @@ alias hub-apply-lint-jinja='djlint --profile jinja -e j2 --reformat --lint --ext
 alias hub-apply-all='hub-apply-format && hub-apply-lint-jinja'
 
 alias hub-source='source ~/venvs/hub/bin/activate'
-alias hub-run='docker compose -f docker-compose.yml -f .local/docker-compose.yml up'
+alias hub-run='docker compose up'
 
 alias hub-build-static='(cd src/plainui/ && sudo yarn build)'
 alias hub-build-msgs='uv run task manage makemessages && uv run task compilemessages && uv run task manage collectstatic --noinput && docker compose restart hub'
