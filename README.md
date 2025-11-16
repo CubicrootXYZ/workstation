@@ -63,6 +63,10 @@ For now you need to logout and login once and then re-run the script.
 
 You need to reload gnome. Either log out and in once or press `ALT` + `F2` and enter `r` in the prompt.
 
+### Restoring public keys from YubiKey
+
+https://www.nicksherlock.com/2021/08/recovering-lost-gpg-public-keys-from-your-yubikey/
+
 ## Attribution
 
 - Kitty theme from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)

@@ -1,6 +1,7 @@
 - hosts: localhost
   gather_facts: no
   become: true
+  become_method: sudo
   roles:
     - {name: dotfiles , tags: [dotfiles]}
     - {name: packages , tags: [packages], when: "packages is defined and packages.enabled | bool"}
