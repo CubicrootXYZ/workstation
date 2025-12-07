@@ -1,0 +1,7 @@
+- name: Install dependencies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - direnv
+    state: latest
+    update_cache: true

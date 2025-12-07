@@ -100,11 +100,11 @@ freecad:
   version: v1.0rc2
 
 # CCC hub settings
-ccc_hub: 
+ccc_hub:
   enabled: false
 
 # gLabels settings
-glabels: 
+glabels:
   enabled: false
 
 # fonts settings
@@ -121,3 +121,7 @@ tlp:
   # Charging settings. 0 or 100 will disable that setting.
   start_charge: 0
   stop_charge: 0
+
+# Direnv settings
+direnv:
+  enabled: true

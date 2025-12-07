@@ -94,3 +94,7 @@ eval "$(starship init bash)"
 # Terminal settings
 export TERM='xterm'
 export EDITOR='nano'
+
+{% if direnv is defined and direnv.enabled %}
+eval "$(direnv hook bash)"
+{% endif %}
