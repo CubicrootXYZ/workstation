@@ -1,0 +1,5 @@
+roles:
+  - name: customize-gnome
+    src: ssh://git@github.com/CubicrootXYZ/ansible-role-customize-gnome.git
+    version: ansible-12
+    scm: git
