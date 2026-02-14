@@ -41,7 +41,7 @@
   when: "install_new_version"
 - name: Download new version
   get_url:
-    url: "https://storage.googleapis.com/golang/go{{ go.version }}.linux-amd64.tar.gz"
+    url: "https://go.dev/dl/go{{ go.version }}.linux-amd64.tar.gz"
     dest: "/tmp/ansible/golang"
     mode: 0440
   when: "install_new_version"
