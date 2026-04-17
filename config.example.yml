@@ -88,6 +88,7 @@ darktable:
 # Seafile settings
 seafile:
   enabled: false
+  version: 9.0.18
 
 # KeepassXC settings
 keepassxc:
