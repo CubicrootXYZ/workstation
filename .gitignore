@@ -1,3 +1,4 @@
 config.yml
 /roles/petermosmans.customize-gnome/
 .vscode
+.venv

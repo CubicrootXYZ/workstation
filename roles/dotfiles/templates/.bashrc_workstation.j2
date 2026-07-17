@@ -44,6 +44,7 @@ alias git-su='git submodule -q foreach git pull -q origin main'
 alias git-amend='git add . && git commit {% if git.signingkey is defined or (git.enableGlobalSigning is defined and git.enableGlobalSigning) %}-S{% endif %} --amend --no-edit'
 alias gsu='git submodule update --init --rebase --recursive'
 alias git-continue='git add . && git rebase --continue'
+alias git-mr='git push -o merge_request.create -o merge_request.title="`git log -1 --pretty=%B`" -o merge_request.assign="{{ git.name }}"'
 {% endif %}
 
 {% if docker is defined and docker.enabled -%}
