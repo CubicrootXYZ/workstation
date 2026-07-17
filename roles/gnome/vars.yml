@@ -16,6 +16,12 @@ gnome_extensions:
       https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v65.shell-extension.zip
     id: 779
     enable: yes # Clipboard history
+  # If settings are not available after install it might be necessary to delete the extension and install it via the 
+  # gnome extensions website directly: https://extensions.gnome.org/extension/8249/notification-configurator/
+  - url: >
+      https://extensions.gnome.org/extension-data/notification-configuratorexposedcat.v22.shell-extension.zip
+    id: 8249
+    enable: yes # Notification configurator.
 gnome_gsettings:
   # Dash to Dock Settings
   - schema: org.gnome.shell.extensions.dash-to-dock
@@ -332,3 +338,6 @@ gnome_dconf:
     value: "true"
   - key: /com/raggesilver/BlackBox/notify-process-completion
     value: "false"
+  # Notification Configurator
+  - key: /org/gnome/shell/extensions/notification-configurator/global
+    value: '''{"enabled":true,"notificationCenter":{"disableGrouping":false,"maximumPerSource":10},"rateLimiting":{"enabled":false,"notificationThreshold":5000,"action":"close"},"timeout":{"enabled":false,"notificationTimeout":4000,"ignoreIdle":true},"urgency":{"alwaysNormalUrgency":false},"display":{"enableFullscreen":false,"notificationPosition":"center","verticalPosition":"top","hideAppTitleRow":false},"colors":{"enabled":false,"theme":{"appNameColor":[0.6,0.6,0.607843137,1],"timeColor":[0.6,0.6,0.607843137,1],"backgroundColor":[0.329411765,0.329411765,0.352941176,1],"titleColor":[0.992156863,0.992156863,0.992156863,1],"bodyColor":[0.992156863,0.992156863,0.992156863,1],"appNameFontSize":18,"timeFontSize":14,"titleFontSize":18,"bodyFontSize":18}},"margins":{"enabled":false,"top":0,"bottom":0,"left":0,"right":0},"windowAttention":{"activateInstead":false}}'''
