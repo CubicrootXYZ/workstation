@@ -58,20 +58,33 @@ alias hub-check-format='uv run task format && uv run task lint'
 
 alias hub-apply-format='ruff check . --fix && ruff format .'
 alias hub-apply-lint-jinja='djlint --profile jinja -e j2 --reformat --lint --extend-exclude venv-djlint .'
+alias hub-apply-lint-html='djlint --profile django --extension html --reformat .'
 alias hub-apply-all='hub-apply-format && hub-apply-lint-jinja'
 
 alias hub-source='source ~/venvs/hub/bin/activate'
 alias hub-run='docker compose up'
 
-alias hub-build-static='(cd src/plainui/ && sudo yarn build)'
+alias hub-build-static='(cd src/plainui/ && sudo yarn build:plainui  && sudo yarn build:fahrplan) && uv run task manage collectstatic --noinput && docker compose restart hub'
 alias hub-build-msgs='uv run task manage makemessages && uv run task compilemessages && uv run task manage collectstatic --noinput && docker compose restart hub'
 alias hub-build-images='echo "Might need to run this multiple times" && docker compose build'
 
+alias hub-apply-demodata='uv run task manage reset_db --noinput --close-sessions && uv run task manage migrate && uv run task manage create_demo_data && DJANGO_SUPERUSER_PASSWORD=admin uv run task manage createsuperuser --noinput --username admin --email admin@example.com'
+alias hub-apply-seed='uv run task manage create_conference seed --force --enable-features'
+
+hub-tests() {
+  (cd src/ && coverage run ./manage.py test $1 -v 2 --failfast)
+}
 hub-tests-core() {
   (cd src/ && coverage run ./manage.py test core.tests$1 -v 2 --failfast)
 }
 hub-tests-api() {
   (cd src/ && coverage run ./manage.py test api.tests$1 -v 2 --failfast)
+}
+hub-tests-apiv2() {
+  (cd src/ && coverage run ./manage.py test apiv2.tests$1 -v 2 --failfast)
+}
+hub-tests-apiintegrations() {
+  (cd src/ && coverage run ./manage.py test apiintegrations.tests$1 -v 2 --failfast)
 }
 hub-tests-plainui() {
   (cd src/ && coverage run ./manage.py test plainui.tests$1 -v 2 --failfast)
