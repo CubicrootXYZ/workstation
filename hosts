@@ -1,1 +1,4 @@
 localhost ansible_connection=local
+
+[ubuntu2604_hosts]
+localhost ansible_become_exe=/usr/bin/sudo.ws
